@@ -16,7 +16,7 @@ def cardetails(request):
     return render(request, 'car-detail.html')
 
 
-def carshtml(request):
+def cars(request):
     return render(request, 'cars.html')
 
 
