@@ -5,7 +5,7 @@ class Contactmessage(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     subject = models.CharField(max_length=100)
-    messsage = models.TextField()
+    message = models.TextField()
     submitted_on = models.DateTimeField(auto_now_add=True)
     
 

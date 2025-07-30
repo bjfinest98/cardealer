@@ -129,6 +129,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS =True
 EMAIL_HOST_USER = 'alaoopeyemi740@gmail.com'
-EMAIL_HOST_PASSWORD ='zucc hckx eapp stpg'
+EMAIL_HOST_PASSWORD ='zucchckxeappstpg'
 DEFAULT_FROM__EMAIL = EMAIL_HOST_USER
-CONTACT_RECEIVER_EMAIL ='alaoopeyemi740@gmail.com'
+

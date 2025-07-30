@@ -1,4 +1,4 @@
-from django.shortcuts  import render
+from django.shortcuts  import render,redirect
 from.models  import Contactmessage
 from django.core.mail import send_mail
 from django.conf  import settings
@@ -42,15 +42,37 @@ def contact(request):
         message =message,
     )
 
+ 
 
-        full_message = f"message from {name} - <{email}> \n \n {subject}"
-    send_mail(
-        subject,
-        full_message,
-        settings.DEFAULT_FROM_EMAIL,
-        [settings.CONTACT_RECEIVE_EMAIL],
+        body =f""" 
 
-    )
+        name:{name}
+        email:{email}
+        subject:{subject}
+        
+
+        message:
+        {message}
+        """
+
+
+
+        send_mail(
+            subject= subject,
+            message= body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=['alaoopeyemi740@gmail.com'],
+            fail_silently=False,
+
+        )
+
+        return redirect('contact')
+    return render(request, 'contact.html')
+
+
+
+    
+    
     message.success(request, "Your message has been sent. Thank you!")
     return redirect('contact')
 
